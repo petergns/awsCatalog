@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy_utils import database_exists, drop_database, create_database
 from database_setup import Category, CatChar, User, Base
 
-engine = create_engine('sqlite:///charcatalog.db')
+engine = create_engine('postgresql://catalog:db-password@localhost/catalog')
 # Clear database
 Base.metadata.drop_all(engine)
 Base.metadata.create_all(engine)
