@@ -54,5 +54,5 @@ class CatChar(Base):
         }
 
 
-engine = create_engine('sqlite:///charcatalog.db')
+engine = create_engine('postgresql://catalog:db-password@localhost/catalog')
 Base.metadata.create_all(engine)
