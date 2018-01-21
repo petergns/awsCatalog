@@ -24,7 +24,7 @@ Static/Public IP: `18.216.39.42`
 
 There are several sites that allow reverse IP lookup to allow you to do this. [2]
 
-In the case of this instance it is: http://ec2-18-216-39-42.us-east-2.compute.amazonaws.com
+In the case of this instance it is: `http://ec2-18-216-39-42.us-east-2.compute.amazonaws.com`
 
 
 
