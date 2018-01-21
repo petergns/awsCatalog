@@ -1,5 +1,7 @@
 Placeholder Draft
 
+Initial Set Up Steps
+
 Create an AWS account
 
 Create a Ubuntu Linix-based instance on Lightsail [1]
@@ -129,7 +131,122 @@ sudo ufw enable
 sudo ufw status
 sudo service ssh restart
 ```
-Disable Root Login (for security reasons):
+Create SSH Key Pairs
+
+**SSH Note:** You can generate new keys, but it is best keeping track of them. Once you have created your SSH Key Pair, you can select and copy to a text editor such as sublime text or notepad++ for later use. Lighsail instances through the browser have a paste window, that you can paste from. 
+
+1. Login as user grader:
+`sudo su - grader`
+2. Create SSH Key pair with:
+`ssh-keygen -t rsa`
+When prompted for where to place type: grader
+3. While still logged in as grader do the following:
+```
+sudo mkdir /home/grader/.ssh
+sudo chown grader:grader /home/grader/.ssh
+sudo chmod 70 /home/grader/ssh
+sudo chown grader:grader /home/grader/.ssh/authorized_keys
+sudo chmod 644 /home/grader/.ssh/authorized_keys
+```
+This will apply permissions to the ssh folder and authorized keys to the user grader.
+
+You can now login with:
+ssh -i /.ssh/id_rsa grader@YOUR_STATIC_IP_HERE -p 2200
+
+Set Timezone to UTC and Install NTP
+
+1. Login as user grader:
+`sudo su - grader`
+2. Set Timezone to UTC:
+`sudo timedatectl set-timezone UTC`
+3. Install NTP:
+`sudo apt-get install ntp`
+4. Reboot the Instance with:
+`sudo reboot`
+
+Installing Packages for Catalog Application
+
+Install APACHE2
+
+1. SSH into the instance.
+2. Login in as user grader:
+`sudo su - grader`
+3. Install Apache2 for the instance with:
+`sudo apt-get install apache2`
+4. Check that Apache2 is loaded at the Static/Public IP, on your browser:
+`http://18.216.39.42`
+If so continue to the next step.
+5. Install mod-wsgi to allow you to run wsgi files:
+`sudo apt-get install libapache2-mod-wsgi`
+6. Go to the sites-enabled directory in apache2:
+```
+cd /etc/apache2/sites-enabled/
+ls
+```
+7. Edit the 000-default.conf file: [Under Edit]
+`sudo nano 000-default.conf`
+`WSGIScriptAlias / /var/www/html/myapp.wsgi`
+8. Restart Apache
+`sudo apache2ctl restart`
+
+Installing and Configuring PostgreSQL
+
+1. Install PostgreSQL:
+`sudo apt-get install postgresql postgresql-contrib`
+2. Login as postgres user:
+`sudo su - postgres`
+3. Create catalog user for PostgreSQL
+`createuser --interactive catalog`
+When prompted by dialog set:
+```
+n for super user
+y for creating databases and other prompts
+db-password for password
+```
+4. Exit postgres account with:
+`exit`
+
+Configure Git 
+
+**Git Note:** It might be a good idea to use the same username and email that you use with gihub.
+
+1. Login to grader user with:
+`sudo su - grader`
+2. Check that Git is installed with
+`sudo apt-get install git`
+3. Set global username and email:
+`sudo git config -global user.name "your_username`
+`sudo git config -global user.email "your_email@emailhost.com"`
+
+Install Required Packages for Project
+
+**Required Packages Note:** Depending on your instance you might have to install more than on this list.
+
+1. Login to grader user with:
+`sudo su - grader`
+2. Install the following packages with:
+```
+sudo apt-get install python-psycopg2 python-flask
+sudo apt-get install python-sqalchemy python-pip
+sudo pip install oauth2client
+sudo pip install requests
+sudo pip install httplib2
+sudo pip install flask-seasurf
+```
+Adding Project Files to Instance
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
