@@ -19,10 +19,12 @@ from oauth2client.client import flow_from_clientsecrets, FlowExchangeError
 
 app = Flask(__name__)
 
-CLIENT_ID = json.loads(open('var/www/catalog/catalog/client_secrets.json', 'r').read())[
+# Add path to client_secrets file i.e. /var/www/catalog/catalog/
+CLIENT_ID = json.loads(open('/var/www/catalog/catalog/client_secrets.json', 'r').read())[
     'web']['client_id']
 
 # Connect to Database
+# Add link to postgresql database ie. postgresql//database_name:db-pasasword@localhost/catalog'
 engine = create_engine('postgresql://catalog:db-password@localhost/catalog')
 Base.metadata.bind = engine
 
@@ -262,7 +264,8 @@ def showLogin():
     # return "The current session state is %s" % login_session['state']
     return render_template('login.html', STATE=state)
 
-
+# Add path to fb_client_secrets.json i.e. /var/www/catalog/catalog/
+  
 # Connect to Facebook
 @app.route('/fbconnect', methods=['POST'])
 def fbconnect():
@@ -276,7 +279,7 @@ def fbconnect():
     app_id = json.loads(open('/var/www/catalog/catalog/fb_client_secrets.json', 'r').read())[
         'web']['app_id']
     app_secret = json.loads(
-        open('var/www/catalog/catalog/fb_client_secrets.json', 'r').read())['web']['app_secret']
+        open('/var/www/catalog/catalog/fb_client_secrets.json', 'r').read())['web']['app_secret']
     url = 'https://graph.facebook.com/oauth/access_token?' \
           'grant_type=fb_exchange_token&client_id=%s&' \
           'client_secret=%s&fb_exchange_token=%s' % (
@@ -352,7 +355,7 @@ def gconnect():
     code = request.data
     try:
         # Upgrade the authorization code into a credentials object
-        oauth_flow = flow_from_clientsecrets('var/www/catalog/catalog/client_secrets.json', scope='')
+        oauth_flow = flow_from_clientsecrets('/var/www/catalog/catalog/client_secrets.json', scope='')
         oauth_flow.redirect_uri = 'postmessage'
         credentials = oauth_flow.step2_exchange(code)
     except FlowExchangeError:
