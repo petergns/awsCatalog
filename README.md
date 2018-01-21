@@ -9,7 +9,7 @@ https://lightsail.aws.amazon.com/ls/docs/getting-started/article/getting-started
 2. Create and attach a static ip for your Lightsail instance i.e. my_static_ip
 3. Note the Public and Private IPs for your instance, and add the following ports:
 
-Static/Public IP: 18.216.39.42
+Static/Public IP: `18.216.39.42`
 
 | Application   | Protocol      | Port Range  |
 | ------------- |:-------------:| -----------:|
