@@ -24,7 +24,7 @@ CLIENT_ID = json.loads(open('/var/www/catalog/catalog/client_secrets.json', 'r')
     'web']['client_id']
 
 # Connect to Database
-# Add link to postgresql database ie. postgresql//database_name:db-pasasword@localhost/catalog'
+# Add link to postgresql database ie. postgresql//database_name:db-pasasword@localhost/catalog
 engine = create_engine('postgresql://catalog:db-password@localhost/catalog')
 Base.metadata.bind = engine
 
