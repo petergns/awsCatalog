@@ -39,7 +39,7 @@ Private IP - Example: 127.00.0.01
 | CUSTOM        | TCP           | 123         |
 | CUSTOM        | TCP           | 2200        |
 | CUSTOM        | TCP           | 5000        |
-*| CUSTOM        | TCP           | 8000        |
+| CUSTOM        | TCP           | 8000        |
 
 **Note On Ports:** TCP 8000 is Optional, but might be useful for flexibility. 
 
