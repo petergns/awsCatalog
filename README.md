@@ -189,7 +189,7 @@ ls
 8. Restart Apache
 `sudo apache2ctl restart`
 
-Installing and Configuring PostgreSQL Users
+Install Major Packages and Clone Application
 
 1. Install PostgreSQL:
 `sudo apt-get install postgresql postgresql-contrib`
@@ -218,6 +218,20 @@ Configure Git
 `sudo git config -global user.name "your_username`
 `sudo git config -global user.email "your_email@emailhost.com"`
 
+Clone Application to Instance
+
+1. Login to grader user with:
+`sudo su - grader`
+2. Create catalog directory:
+`sudo mkdir var/www/catalog/`
+3. Move to catalog directory:
+ `cp catalog`
+4. Clone repository into instance:
+`sudo git clone https://github.com/petergns/linix_server_catalog.git var/www/catalog/catalog`
+5. Move client json files to previous directory:
+`sudo cp var/www/catalog/catalog/client_secrets.json var/www/catalog/client_secrets.json`
+`sudo cp var/www/catalog/catalog/fb_client_secrets.json var/www/catalog/fb_client_secrets.json`
+
 Install Additional Packages
 ------
 **Required Packages Note:** Depending on your instance you might have to install more than on this list.
@@ -235,21 +249,6 @@ sudo pip install requests
 sudo pip install httplib2
 sudo pip install flask-seasurf
 ```
-Clone Application to Instance
-------
-1. Login to grader user with:
-`sudo su - grader`
-2. Create catalog directory:
-`sudo mkdir var/www/catalog/`
-3. Move to catalog directory:
- `cp catalog`
-4. Clone repository into instance:
-`sudo git clone https://github.com/petergns/linix_server_catalog.git var/www/catalog/catalog`
-5. Move client json files to previous directory:
-`sudo cp var/www/catalog/catalog/client_secrets.json var/www/catalog/client_secrets.json`
-`sudo cp var/www/catalog/catalog/fb_client_secrets.json var/www/catalog/fb_client_secrets.json`
-6. Move wsgi file to catalog
-`
 Configure Application on Instance
 ------
 
