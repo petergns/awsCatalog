@@ -218,7 +218,7 @@ Configure Git
 `sudo git config -global user.name "your_username`
 `sudo git config -global user.email "your_email@emailhost.com"`
 
-Install Additional Packages and Add Application Files
+Install Additional Packages
 ------
 **Required Packages Note:** Depending on your instance you might have to install more than on this list.
 
@@ -228,13 +228,15 @@ Install Additional Packages and Add Application Files
 ```
 sudo apt-get install python-psycopg2 python-flask
 sudo apt-get install python-sqalchemy python-pip
+sudo apt-get install python-dev
+
 sudo pip install oauth2client
 sudo pip install requests
 sudo pip install httplib2
 sudo pip install flask-seasurf
 ```
-Adding Application Files to Instance
-
+Clone Application to Instance
+------
 1. Login to grader user with:
 `sudo su - grader`
 2. Create catalog directory:
@@ -246,7 +248,8 @@ Adding Application Files to Instance
 5. Move client json files to previous directory:
 `sudo cp var/www/catalog/catalog/client_secrets.json var/www/catalog/client_secrets.json`
 `sudo cp var/www/catalog/catalog/fb_client_secrets.json var/www/catalog/fb_client_secrets.json`
-
+6. Move wsgi file to catalog
+`
 Configure Application on Instance
 ------
 
