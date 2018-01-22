@@ -1,20 +1,20 @@
-Linix Server Catalog Project
+Linux Server Catalog Project
 ====================
-Project files for the Linix Server Catalog in the Udacity Full Stack Nanodegree.
+Project files for the Linux Server Catalog in the Udacity Full Stack Nanodegree.
 
-This project contains a database of comic book universe characters, and shows how to host it on a Ubuntu Linix-based Amazon AWS Lightsail instance.
+This project contains a database of comic book universe characters, and shows how to host it on a Ubuntu Linux-based Amazon AWS Lightsail instance.
 
 ## Set Up Instructions
 
-Follow these instructions to set up the Linix Server Catalog for the Linix Server Catalog Project.
+Follow these instructions to set up the Linux Server Catalog for the Linux Server Catalog Project.
 
 ### Required Starting Resources:
 * Web Browser such as Chrome, Firefox, or Safari.
-* [Amazon AWS Lightsail Ubuntu Linix Instance](https://lightsail.aws.amazon.com/ls/docs/getting-started/article/getting-started-with-amazon-lightsail).
+* [Amazon AWS Lightsail Ubuntu Linux Instance](https://lightsail.aws.amazon.com/ls/docs/getting-started/article/getting-started-with-amazon-lightsail).
 * [Git](https://git-scm.com/downloads).
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 * [Vagrant](https://www.vagrantup.com/).
-* [Ubuntu Linix Virtual Machine](https://github.com/udacity/fullstack-nanodegree-vm).
+* [Ubuntu Linux Virtual Machine](https://github.com/udacity/fullstack-nanodegree-vm).
 * [Optional - Github Desktop](https://desktop.github.com/). 
 
 **AWS Instance Note:** It might be required to clear your browser cookies or use more than one browser, if there is a problem of constant logouts under a minute.
@@ -23,7 +23,7 @@ Follow these instructions to set up the Linix Server Catalog for the Linix Serve
 
 Create an [Amazon AWS Lightsail account](https://portal.aws.amazon.com/).
 
-Create a [Ubuntu Linix-based instance on Lightsail](https://lightsail.aws.amazon.com/ls/docs/getting-started/article/getting-started-with-amazon-lightsail).
+Create a [Ubuntu Linux-based instance on Lightsail](https://lightsail.aws.amazon.com/ls/docs/getting-started/article/getting-started-with-amazon-lightsail).
 
 1. Create new instance i.e. my_instance_name on Lightsail.
 2. Create and attach a static ip for your Lightsail instance i.e. my_static_ip.
@@ -393,7 +393,10 @@ Your web application should be functioning.
 1. https://pixabay.com/en/x-men-hero-marvel-comic-book-2640250/
 
 ## Acknowledgments
-Acknowledgments to [Udacity](https://www.udacity.com/) and [Amazon AWS Ligthsail](https://aws.amazon.com/lightsail/) for the resources that helped me develop this.
+Acknowledgments to the following for helping me develop this project:
+* [Udacity](https://www.udacity.com/) 
+* [Amazon AWS Ligthsail](https://aws.amazon.com/lightsail/)
+* [Stueken's Linux Configuration](https://github.com/stueken/FSND-P5_Linux-Server-Configuration)
 
 ## Sources
 Create an Amazon AWS Lightsail account
