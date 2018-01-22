@@ -157,7 +157,7 @@ Set Timezone to UTC and Install NTP
 
 Install Major Packages and Clone Application
 ------
-Install APACHE2
+### Install APACHE2
 
 1. SSH into the instance.
 2. Login in as user grader (if not logged in already): `sudo su - grader`
@@ -177,7 +177,7 @@ ls
 `WSGIScriptAlias / /var/www/html/myapp.wsgi`
 9. Restart Apache: `sudo apache2ctl restart`
 
-Install PostgreSQL and Create Catalog User
+### Install PostgreSQL and Create Catalog User
 
 1. Install PostgreSQL:
 `sudo apt-get install postgresql postgresql-contrib`
@@ -192,7 +192,7 @@ db-password for password
 4. Exit postgres account with:
 `exit`
 
-Install and Configure Git 
+### Install and Configure Git 
 
 **Git Note:** It might be a good idea to use the same username and email that you use with github.
 
@@ -202,7 +202,7 @@ Install and Configure Git
 `sudo git config -global user.name "your_username`
 `sudo git config -global user.email "your_email@emailhost.com"`
 
-Clone Application to Instance
+### Clone Application to Instance
 
 1. Login to grader user (if not logged in already): `sudo su - grader`
 3. Move to www directory: `cd var/www/`
@@ -232,7 +232,7 @@ sudo pip install flask-seasurf
 Configure Application on Instance
 ------
 
-Create Catalog Configuration File
+### Create Catalog Configuration File
 
 **Catalog Configuration Note:** Normally you would have to create a .conf file from scratch i.e:
 `sudo nano /etc/apache2/sites-available/catalog.conf`
@@ -252,7 +252,7 @@ ls
 9. Enable catalog configuration file with: `sudo a2ensite catalog.conf`
 10. Restart Apache with: `sudo service apache2 restart`
 
-## Create Virtual Environment
+###  Create Virtual Environment
 
 1. Login to grader user (if not logged in already) with: `sudo su - grader`
 2. Move to /var/www/catalog/catalog with:
@@ -281,7 +281,7 @@ If this shows it is connected, then it is complete.
 6. Deactivate the virtual environment:
 `deactivate`
 
-## Create PostgreSQL Database
+###  Create PostgreSQL Database
 
 1. Login to postgresql user with: `sudo su - postgresql`
 2. Move to the var/www/catalog/catalog directory:
@@ -303,7 +303,7 @@ GRANT ALL ON SCHEMA public TO catalog;
 8. Quit psql with: `\q`
 9. Exit postgres user with: `exit`
 
-Header
+### Configure and Create .htaccess File
 
 **.htaccess file Note:** This file is used to control access of the application to the web.
 
@@ -338,20 +338,26 @@ https://developers.facebook.com/
 
 1. Login to your google developer account, go into your API credentals for your app.
 2. For Authorized JavaScript orgins include:
-* Your Static IP ie. http://18.216.39.42
-* Your DNS Address ie. http://ec2-18-216-39-42.us-east-2.compute.amazonaws.com
-* http://localhost:5000
-* http://127.0.0.1:5000
+```
+Your Static IP ie. http://18.216.39.42
+Your DNS Address ie. http://ec2-18-216-39-42.us-east-2.compute.amazonaws.com
+http://localhost:5000
+http://127.0.0.1:5000
+```
 3. For Authorized redirect URIs include:
-* http://ec2-18-216-39-42.us-east-2.compute.amazonaws.com/oauth2callback
-* http://ec2-18-216-39-42.us-east-2.compute.amazonaws.com/login
-* http://ec2-18-216-39-42.us-east-2.compute.amazonaws.com/gconnect
-* http://localhost:5000/login
-* http://localhost:5000/gconnect
-4. Login to your facebook developer account, and edit the app in my apps.
-* http://localhost:5000/login/callback
-* http://18.216.39.42/login/callback
-* http://ec2-18-216-39-42.us-east-2.compute.amazonaws.com/callback
+```
+http://ec2-18-216-39-42.us-east-2.compute.amazonaws.com/oauth2callback
+http://ec2-18-216-39-42.us-east-2.compute.amazonaws.com/login
+http://ec2-18-216-39-42.us-east-2.compute.amazonaws.com/gconnect
+http://localhost:5000/login
+http://localhost:5000/gconnect
+```
+4. Login to your facebook developer account, and edit the app in my apps:
+```
+http://localhost:5000/login/callback
+http://18.216.39.42/login/callback
+http://ec2-18-216-39-42.us-east-2.compute.amazonaws.com/callback
+```
 5. SSH into your Lightsail Instance.
 6. Login to grader user (if not logged in already) with: `sudo su - grader`
 7. Edit the client_secrets.json file and make sure the URIs match:
@@ -371,10 +377,10 @@ Your web application should be functioning.
 
 ### Useful Editors:
 <ul>
-  <li>Atom (https://atom.io/)
-  <li>Git Nano (https://www.nano-editor.org/)
-  <li>Notepad++ (https://notepad-plus-plus.org/)
-  <li>Sublime Text (https://www.sublimetext.com/)
+  <li>Atom(https://atom.io/)
+  <li>Git Nano(https://www.nano-editor.org/)
+  <li>Notepad++(https://notepad-plus-plus.org/)
+  <li>Sublime Text(https://www.sublimetext.com/)
 </ul>
 
 ### Catalog When Logged In
@@ -393,10 +399,36 @@ Your web application should be functioning.
 Acknowledgments to [Udacity](https://www.udacity.com/) and [Amazon AWS Ligthsail](https://aws.amazon.com/lightsail/) for the resources that helped me develop this.
 
 ## Sources
+Create an Amazon AWS Lightsail account
 [1]: https://portal.aws.amazon.com/
+Create a Ubuntu Linix-based instance on Lightsail
 [2]: https://lightsail.aws.amazon.com/ls/docs/getting-started/article/getting-started-with-amazon-lightsail
-
+Mxtoolbox.com IP Lookup to Find DNS
 [3]: https://mxtoolbox.com/SuperTool.aspx
+How to List Databases and Tables in PostgreSQL Using psql
+Must copy and rename file
+[4]: https://askubuntu.com/questions/460206/must-copy-and-rename-file
+```
+Copy and rename in the same time (also change filename, not only path):
+cp program3.cpp homework6.cpp
+Rename only:
+mv program3.cpp homework6.cpp
+```
+How to List Databases and Tables in PostgreSQL Using psql
+[5]: https://chartio.com/resources/tutorials/how-to-list-databases-and-tables-in-postgresql-using-psql/ 
+```
+postgres=# \c sales
+You are now connected to database "sales" as user "ubuntu".
+sales=#
+```
+500 Internal Server Error - How can I fix this
+[6]: https://www.digitalocean.com/community/questions/500-internal-server-error-how-can-i-fix-this-this-website-was-supposed-to-be-a-christmas-present
+```
+sudo tail /var/log/apache2/error.log
+```
+[7]:
+
+
 
 Sources Edit Files
 
@@ -432,14 +464,6 @@ https://www.postgresql.org/docs/current/static/manage-ag-dropdb.html
 
 Psycopg 2.7.4.dev1 documentation usage
 http://initd.org/psycopg/docs/usage.html
-
-Must copy and rename file
-https://askubuntu.com/questions/460206/must-copy-and-rename-file
-
-Copy and rename in the same time (also change filename, not only path):
-cp program3.cpp homework6.cpp
-Rename only:
-mv program3.cpp homework6.cpp
 
 500 Internal Server Error - How can I fix this (this website was supposed to be a Christmas present)!
 sudo tail /var/log/apache2/error.log
@@ -477,12 +501,6 @@ https://discussions.udacity.com/t/app-not-running-after-all-this-time/362885
 
 Virtual Environments
 http://modwsgi.readthedocs.io/en/develop/user-guides/virtual-environments.html
-
-How to List Databases and Tables in PostgreSQL Using psql
-https://chartio.com/resources/tutorials/how-to-list-databases-and-tables-in-postgresql-using-psql/
-postgres=# \c sales
-You are now connected to database "sales" as user "ubuntu".
-sales=#
 
 Start / Stop and Restart Apache 2 Web Server Command
 https://www.cyberciti.biz/faq/star-stop-restart-apache2-webserver/
