@@ -401,11 +401,14 @@ Acknowledgments to [Udacity](https://www.udacity.com/) and [Amazon AWS Ligthsail
 ## Sources
 Create an Amazon AWS Lightsail account
 [1]: https://portal.aws.amazon.com/
+
 Create a Ubuntu Linix-based instance on Lightsail
 [2]: https://lightsail.aws.amazon.com/ls/docs/getting-started/article/getting-started-with-amazon-lightsail
 Mxtoolbox.com IP Lookup to Find DNS
+
 [3]: https://mxtoolbox.com/SuperTool.aspx
 How to List Databases and Tables in PostgreSQL Using psql
+
 Must copy and rename file
 [4]: https://askubuntu.com/questions/460206/must-copy-and-rename-file
 ```
