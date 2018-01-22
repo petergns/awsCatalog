@@ -222,15 +222,10 @@ Clone Application to Instance
 
 1. Login to grader user with:
 `sudo su - grader`
-2. Create catalog directory:
-`sudo mkdir var/www/catalog/`
-3. Move to catalog directory:
- `cp catalog`
+3. Move to www directory:
+ `cd var/www/`
 4. Clone repository into instance:
-`sudo git clone https://github.com/petergns/linix_server_catalog.git var/www/catalog/catalog`
-5. Move client json files to previous directory:
-`sudo cp var/www/catalog/catalog/client_secrets.json var/www/catalog/client_secrets.json`
-`sudo cp var/www/catalog/catalog/fb_client_secrets.json var/www/catalog/fb_client_secrets.json`
+`sudo git clone https://github.com/petergns/linix_server_catalog.git catalog`
 
 Install Additional Packages
 ------
