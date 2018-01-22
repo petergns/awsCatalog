@@ -331,10 +331,7 @@ python universe_characters.py
 
 ## Login Authorization Configuration
 
-**Login Authorization Note:** You need to have a facebook developer account and a google developer account.
-
-https://console.developers.google.com/
-https://developers.facebook.com/
+**Login Authorization Note:** You need to have a [facebook developer account](https://developers.facebook.com/) and a [google developer account](https://console.developers.google.com/).
 
 1. Login to your google developer account, go into your API credentals for your app.
 2. For Authorized JavaScript orgins include:
