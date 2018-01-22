@@ -164,7 +164,7 @@ Set Timezone to UTC and Install NTP
 4. Reboot the Instance with:
 `sudo reboot`
 
-Installing Packages for Database Application
+Install Major Packages and Clone Application
 ------
 Install APACHE2
 
@@ -189,7 +189,7 @@ ls
 8. Restart Apache
 `sudo apache2ctl restart`
 
-Install Major Packages and Clone Application
+Install PostgreSQL and Create Catalog User
 
 1. Install PostgreSQL:
 `sudo apt-get install postgresql postgresql-contrib`
