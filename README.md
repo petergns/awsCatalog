@@ -4,17 +4,33 @@ Project files for the Linix Server Catalog in the Udacity Full Stack Nanodegree.
 
 This project contains a database of comic book universe characters, and shows how to host it on a Ubuntu Linix-based Amazon AWS Lightsail instance.
 
-Setup and Configure Instance
-------
+## Set Up Instructions
+
+Follow these instructions to set up the Linix Server Catalog for the Linix Server Catalog Project.
+
+### Required Starting Resources:
+* Web Browser such as Chrome, Firefox, or Safari.
+* [Amazon AWS Lightsail Ubuntu Linix Instance](https://lightsail.aws.amazon.com/ls/docs/getting-started/article/getting-started-with-amazon-lightsail).
+* [Git](https://git-scm.com/downloads).
+* [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
+* [Vagrant](https://www.vagrantup.com/).
+* [Ubuntu Linix Virtual Machine](https://github.com/udacity/fullstack-nanodegree-vm).
+* [Optional - Github Desktop](https://desktop.github.com/). 
+
+**AWS Instance Note:** It might be required to clear your browser cookies or use more than one browser, if there is a problem of constant logouts under a minute.
+
+### Setup and Configure Instance
+
 Create an Amazon AWS Lightsail account. [[1]].
 
 Create a Ubuntu Linix-based instance on Lightsail. [[2]]
 
-1. Create new instance i.e. my_instance_name on Lightsail
-2. Create and attach a static ip for your Lightsail instance i.e. my_static_ip
+1. Create new instance i.e. my_instance_name on Lightsail.
+2. Create and attach a static ip for your Lightsail instance i.e. my_static_ip.
 3. Note the Public and Private IPs for your instance, and add the following ports:
 
 Static/Public IP: `18.216.39.42`
+Private IP - Example: 127.00.0.01
 
 | Application   | Protocol      | Port Range  |
 | ------------- |:-------------:| -----------:|
@@ -25,13 +41,13 @@ Static/Public IP: `18.216.39.42`
 | CUSTOM        | TCP           | 5000        |
 | CUSTOM        | TCP           | 8000        |
 
-4. Find the DNS Address of your Instance. 
+Find the DNS Address of Instance
 
-There are several sites that allow reverse IP lookup to allow you to do this. [2]
+There are several sites that allow reverse IP lookup to allow you to do this. [[3]]
 
 In the case of this instance it is: `http://ec2-18-216-39-42.us-east-2.compute.amazonaws.com`
 
-Update the instance
+### Update the instance
 
 1. Login to the instance through SSH on your browser.
 2. Update the update list: `sudo apt-get update`
@@ -48,8 +64,8 @@ sudo apt-get upgrade
 8. Reboot the instance with: `sudo reboot`
 9. Restart the instance through SSH.
 
-Create user accounts
-------
+### Create user accounts
+
 1. Enter Root: `sudo su`
 2. Set ubuntu password using: `passwd ubuntu`
 You will be asked to set a new UNIX password.
@@ -66,8 +82,8 @@ When prompted for Full Name add: `Database Catalog` or `Catalog`
 
 **User Account Note:** You may be prompted to enter this password, so it is best to note these down.
 
-Set IPs and Ports
-------
+### Set IPs and Ports
+
 **Editing Note:** If any of these files are blank, you might not be in the file, if so use:
 `cd /etc/` and `sudo nano hosts`
 1. Make sure you are logged in as the super user grader: `sudo su - grader`
@@ -83,7 +99,7 @@ Save with ctrl+x and y on prompt (or as directed by nano editor)
 **Note on Ports:** If you disable Port 22 on Lightsail, you will be unable to login on the Ligthsail web page.
 **Note on PermitRootLogin:** Root Login is best kept disabled for security reasons, and only enabled when you need to use it.
 
-Create Instance Snapshot/Backup
+### Create Instance Snapshot/Backup
 
 **Note on Snapshots:** It is useful to have a snapshot just in case anything goes wrong while using your instance, even if it might take a few minutes to create. You can always delete and add instances as you go.
 
@@ -377,6 +393,8 @@ Acknowledgments to [Udacity](https://www.udacity.com/) and [Amazon AWS Ligthsail
 ## Sources
 [1]: https://portal.aws.amazon.com/
 [2]: https://lightsail.aws.amazon.com/ls/docs/getting-started/article/getting-started-with-amazon-lightsail
+
+[3]: https://mxtoolbox.com/SuperTool.aspx
 
 Sources Edit Files
 
