@@ -4,10 +4,7 @@ Setup and Configure Instance
 ------
 Create an AWS account
 
-Create a Ubuntu Linix-based instance on Lightsail [1]
-https://lightsail.aws.amazon.com/ls/docs/getting-started/article/getting-started-with-amazon-lightsail
-
-[1]: http://slashdot.org
+Create a Ubuntu Linix-based instance on Lightsail [[1]]
 
 1. Create new instance i.e. my_instance_name on Lightsail
 2. Create and attach a static ip for your Lightsail instance i.e. my_static_ip
@@ -373,7 +370,11 @@ Your web application should be functioning.
 ## Acknowledgments
 Acknowledgments to [Udacity](https://www.udacity.com/) and [Amazon AWS Ligthsail](https://aws.amazon.com/lightsail/) for the resources that helped me develop this.
 
-Sources
+## Sources
+
+[1]: https://lightsail.aws.amazon.com/ls/docs/getting-started/article/getting-started-with-amazon-lightsail
+
+Sources Edit Files
 
 Amazon Lightsail: How to set up your first instance
 https://cloudacademy.com/blog/how-to-set-up-your-first-amazon-lightsail/
