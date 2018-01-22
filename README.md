@@ -397,6 +397,7 @@ Acknowledgments to the following for helping me develop this project:
 * [Udacity](https://www.udacity.com/) 
 * [Amazon AWS Ligthsail](https://aws.amazon.com/lightsail/)
 * [Stueken's Linux Configuration](https://github.com/stueken/FSND-P5_Linux-Server-Configuration)
+* [The Previous Project](https://github.com/petergns/item-catalog-project)
 
 ## Sources
 Create an Amazon AWS Lightsail account
