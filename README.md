@@ -189,7 +189,7 @@ ls
 8. Restart Apache
 `sudo apache2ctl restart`
 
-Installing and Configuring PostgreSQL
+Installing and Configuring PostgreSQL Users
 
 1. Install PostgreSQL:
 `sudo apt-get install postgresql postgresql-contrib`
@@ -218,7 +218,7 @@ Configure Git
 `sudo git config -global user.name "your_username`
 `sudo git config -global user.email "your_email@emailhost.com"`
 
-Install Required Packages and Add Application Files to Instance
+Install Additional Packages and Add Application Files
 ------
 **Required Packages Note:** Depending on your instance you might have to install more than on this list.
 
@@ -246,7 +246,10 @@ Adding Application Files to Instance
 5. Move client json files to previous directory:
 `sudo cp var/www/catalog/catalog/client_secrets.json var/www/catalog/client_secrets.json`
 `sudo cp var/www/catalog/catalog/fb_client_secrets.json var/www/catalog/fb_client_secrets.json`
-6. 
+
+Configure Application on Instance
+------
+
 
 
 
