@@ -207,7 +207,7 @@ db-password for password
 1. Login to grader user (if not logged in already): `sudo su - grader`
 3. Move to www directory: `cd var/www/`
 4. Clone repository into instance:
-`sudo git clone https://github.com/petergns/linix_server_catalog.git catalog`
+`sudo git clone https://github.com/petergns/linux_server_catalog.git catalog`
 
 Install Additional Packages
 ------
