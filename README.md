@@ -7,6 +7,8 @@ Create an AWS account
 Create a Ubuntu Linix-based instance on Lightsail [1]
 https://lightsail.aws.amazon.com/ls/docs/getting-started/article/getting-started-with-amazon-lightsail
 
+[1]: http://slashdot.org
+
 1. Create new instance i.e. my_instance_name on Lightsail
 2. Create and attach a static ip for your Lightsail instance i.e. my_static_ip
 3. Note the Public and Private IPs for your instance, and add the following ports:
@@ -128,7 +130,7 @@ You can now login with:
 ssh -i /.ssh/id_rsa grader@YOUR_LIGHTSAIL_IP_HERE -p 2200
 
 Set Timezone to UTC and Install NTP
-
+------
 1. Login as user grader: `sudo su - grader`
 2. Set Timezone to UTC: `sudo timedatectl set-timezone UTC`
 3. Install NTP: `sudo apt-get install ntp`
@@ -231,7 +233,7 @@ ls
 9. Enable catalog configuration file with: `sudo a2ensite catalog.conf`
 10. Restart Apache with: `sudo service apache2 restart`
 
-Create Virtual Environment
+## Create Virtual Environment
 
 1. Login to grader user (if not logged in already) with: `sudo su - grader`
 2. Move to /var/www/catalog/catalog with:
@@ -260,7 +262,7 @@ If this shows it is connected, then it is complete.
 6. Deactivate the virtual environment:
 `deactivate`
 
-Create PostgreSQL Database
+## Create PostgreSQL Database
 
 1. Login to postgresql user with: `sudo su - postgresql`
 2. Move to the var/www/catalog/catalog directory:
@@ -308,9 +310,9 @@ python universe_characters.py
 11. Restart Apache2 with: `sudo service apache2 restart`
 12. Exit your instance.
 
-Authorization Configuration
+## Login Authorization Configuration
 
-**Google and Facebook Authorization Note:** You need to have a facebook developer account and a google developer account.
+**Login Authorization Note:** You need to have a facebook developer account and a google developer account.
 
 https://console.developers.google.com/
 https://developers.facebook.com/
@@ -369,7 +371,7 @@ Your web application should be functioning.
 1. https://pixabay.com/en/x-men-hero-marvel-comic-book-2640250/
 
 ## Acknowledgments
-Acknowledgments to [Udacity](https://www.udacity.com/) for the resources that helped me develop this.
+Acknowledgments to [Udacity](https://www.udacity.com/) and [Amazon AWS Ligthsail](https://aws.amazon.com/lightsail/) for the resources that helped me develop this.
 
 Sources
 
