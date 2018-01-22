@@ -397,16 +397,16 @@ Acknowledgments to [Udacity](https://www.udacity.com/) and [Amazon AWS Ligthsail
 
 ## Sources
 Create an Amazon AWS Lightsail account
-[1]: https://portal.aws.amazon.com/
+[1]:https://portal.aws.amazon.com/
 
 Create a Ubuntu Linix-based instance on Lightsail
-[2]: https://lightsail.aws.amazon.com/ls/docs/getting-started/article/getting-started-with-amazon-lightsail
+[2]:https://lightsail.aws.amazon.com/ls/docs/getting-started/article/getting-started-with-amazon-lightsail
 
 Mxtoolbox.com IP Lookup to Find DNS
-[3]: https://mxtoolbox.com/SuperTool.aspx
+[3]:https://mxtoolbox.com/SuperTool.aspx
 
 Must copy and rename file
-[4]: https://askubuntu.com/questions/460206/must-copy-and-rename-file
+[4]:https://askubuntu.com/questions/460206/must-copy-and-rename-file
 ```
 Copy and rename in the same time (also change filename, not only path):
 cp program3.cpp homework6.cpp
@@ -415,7 +415,7 @@ mv program3.cpp homework6.cpp
 ```
 
 How to List Databases and Tables in PostgreSQL Using psql
-[5]: https://chartio.com/resources/tutorials/how-to-list-databases-and-tables-in-postgresql-using-psql/ 
+[5]:https://chartio.com/resources/tutorials/how-to-list-databases-and-tables-in-postgresql-using-psql/ 
 ```
 postgres=# \c sales
 You are now connected to database "sales" as user "ubuntu".
@@ -423,7 +423,7 @@ sales=#
 ```
 
 500 Internal Server Error - How can I fix this
-[6]: https://www.digitalocean.com/community/questions/500-internal-server-error-how-can-i-fix-this-this-website-was-supposed-to-be-a-christmas-present
+[6]:https://www.digitalocean.com/community/questions/500-internal-server-error-how-can-i-fix-this-this-website-was-supposed-to-be-a-christmas-present
 ```
 sudo tail /var/log/apache2/error.log
 ```
