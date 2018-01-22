@@ -169,7 +169,7 @@ Install Major Packages and Clone Application
 Install APACHE2
 
 1. SSH into the instance.
-2. Login in as user grader:
+2. Login in as user grader (if not logged in already):
 `sudo su - grader`
 3. Install Apache2 for the instance with:
 `sudo apt-get install apache2`
@@ -183,10 +183,11 @@ If so continue to the next step.
 cd /etc/apache2/sites-enabled/
 ls
 ```
-7. Edit the 000-default.conf file: [Under Edit]
+7. Create and edit the 000-default.conf file: 
 `sudo nano 000-default.conf`
+8. Add in the following line before </VirtualHost>:
 `WSGIScriptAlias / /var/www/html/myapp.wsgi`
-8. Restart Apache
+9. Restart Apache:
 `sudo apache2ctl restart`
 
 Install PostgreSQL and Create Catalog User
@@ -206,13 +207,13 @@ db-password for password
 4. Exit postgres account with:
 `exit`
 
-Configure Git 
+Install and Configure Git 
 
-**Git Note:** It might be a good idea to use the same username and email that you use with gihub.
+**Git Note:** It might be a good idea to use the same username and email that you use with github.
 
 1. Login to grader user with:
 `sudo su - grader`
-2. Check that Git is installed with
+2. Check that Git is installed with:
 `sudo apt-get install git`
 3. Set global username and email:
 `sudo git config -global user.name "your_username`
@@ -220,7 +221,7 @@ Configure Git
 
 Clone Application to Instance
 
-1. Login to grader user with:
+1. Login to grader user (if not logged in already):
 `sudo su - grader`
 3. Move to www directory:
  `cd var/www/`
@@ -231,7 +232,7 @@ Install Additional Packages
 ------
 **Required Packages Note:** Depending on your instance you might have to install more than on this list.
 
-1. Login to grader user with:
+1. Login to grader user (if not logged in already):
 `sudo su - grader`
 2. Install the following packages with:
 ```
@@ -239,7 +240,11 @@ sudo apt-get install python-psycopg2 python-flask
 sudo apt-get install python-sqalchemy python-pip
 sudo apt-get install python-dev
 
+sudo pip install sqlalchemy
+sudo pip install python-psycopg2
+sudo pip install Flask-SQLAlchemy
 sudo pip install oauth2client
+sudo pip install --upgrade oauth2client
 sudo pip install requests
 sudo pip install httplib2
 sudo pip install flask-seasurf
@@ -247,8 +252,27 @@ sudo pip install flask-seasurf
 Configure Application on Instance
 ------
 
+Create Catalog Configuration File
 
-
+**Catalog Configuration Note:** Normally you would have to create a .conf file i.e.:
+`sudo nano /etc/apache2/sites-available/catalog.conf`
+1. Login to grader user (if not logged in already) with:
+`sudo su - grader`
+2. Move to catalog/temp/ directory:
+`cd /var/www/catalog/temp`
+3. Move catalog.conf file to sites-available:
+`sudo mv catalog.conf /etc/apache2/sites-available/`
+4. Delete temp directory:
+`sudo rm -rf temp`
+ 
+[Editing Files - ENV]
+pip install httplib2
+pip install requests
+sudo pip install --upgrade oauth2client
+sudo pip install sqlalchemy
+pip install Flask-SQLAlchemy
+sudo pip install python-psycopg2
+pip install requests
 
 
 
