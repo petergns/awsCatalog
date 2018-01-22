@@ -348,6 +348,29 @@ Your web application should be functioning.
 3. Login with your Facebook Account.
 4. View catalog data.
 
+### Useful Editors:
+<ul>
+  <li>Atom (https://atom.io/)
+  <li>Git Nano (https://www.nano-editor.org/)
+  <li>Notepad++ (https://notepad-plus-plus.org/)
+  <li>Sublime Text (https://www.sublimetext.com/)
+</ul>
+
+### Catalog When Logged In
+![Image of Output](https://github.com/petergns/item-catalog-project/blob/master/comic-universe-catalog.PNG)
+
+### Adding a Comic Book Character Page
+![Image of Output](https://github.com/petergns/item-catalog-project/blob/master/add-new-character.PNG)
+
+## Author
+[petergns](https://github.com/petergns)
+
+### Free Image Resource
+1. https://pixabay.com/en/x-men-hero-marvel-comic-book-2640250/
+
+## Acknowledgments
+Acknowledgments to [Udacity](https://www.udacity.com/) for the resources that helped me develop this.
+
 Sources
 
 Amazon Lightsail: How to set up your first instance
