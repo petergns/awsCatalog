@@ -164,7 +164,7 @@ Set Timezone to UTC and Install NTP
 4. Reboot the Instance with:
 `sudo reboot`
 
-Installing Packages for Catalog Application
+Installing Packages for Database Application
 ------
 Install APACHE2
 
@@ -218,7 +218,7 @@ Configure Git
 `sudo git config -global user.name "your_username`
 `sudo git config -global user.email "your_email@emailhost.com"`
 
-Install Required Packages for Project
+Install Required Packages and Add Application Files to Instance
 ------
 **Required Packages Note:** Depending on your instance you might have to install more than on this list.
 
@@ -233,7 +233,7 @@ sudo pip install requests
 sudo pip install httplib2
 sudo pip install flask-seasurf
 ```
-Adding Project Files to Instance
+Adding Application Files to Instance
 
 1. Login to grader user with:
 `sudo su - grader`
@@ -246,7 +246,7 @@ Adding Project Files to Instance
 5. Move client json files to previous directory:
 `sudo cp var/www/catalog/catalog/client_secrets.json var/www/catalog/client_secrets.json`
 `sudo cp var/www/catalog/catalog/fb_client_secrets.json var/www/catalog/fb_client_secrets.json`
-
+6. 
 
 
 
