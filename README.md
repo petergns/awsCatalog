@@ -349,3 +349,93 @@ Your web application should be functioning.
 4. View catalog data.
 
 Sources
+
+Amazon Lightsail: How to set up your first instance
+https://cloudacademy.com/blog/how-to-set-up-your-first-amazon-lightsail/
+
+How do I remove a full directory in Linux?
+https://www.computerhope.com/issues/ch000798.htm
+
+Generating a new SSH key and adding it to the ssh-agent'
+https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+
+Download and set up PuTTY to connect using SSH in Amazon Lightsail
+https://lightsail.aws.amazon.com/ls/docs/how-to/article/lightsail-how-to-set-up-putty-to-connect-using-ssh
+
+How to manage PostgreSQL databases and users from the command line
+https://www.a2hosting.com/kb/developer-corner/postgresql/managing-postgresql-databases-and-users-from-the-command-line
+
+PostgreSQL — Create User, Create Database, Grant privileges/access.
+https://medium.com/@mohammedhammoud/postgresql-create-user-create-database-grant-privileges-access-aabb2507c0aa
+
+PostgreSQL Server Installation and Configuration
+http://openobject-documentation.readthedocs.io/en/latest/1/linux/postgres/index.html
+
+postgresql database owner can't access database - “No relations found.”
+https://stackoverflow.com/questions/7758533/postgresql-database-owner-cant-access-database-no-relations-found/7758860#7758860
+
+PostgreSQL 10.1 Documentation
+https://www.postgresql.org/docs/10/static/index.html
+
+Destroying a Database
+https://www.postgresql.org/docs/current/static/manage-ag-dropdb.html
+
+Psycopg 2.7.4.dev1 documentation usage
+http://initd.org/psycopg/docs/usage.html
+
+Must copy and rename file
+https://askubuntu.com/questions/460206/must-copy-and-rename-file
+
+Copy and rename in the same time (also change filename, not only path):
+cp program3.cpp homework6.cpp
+Rename only:
+mv program3.cpp homework6.cpp
+
+500 Internal Server Error - How can I fix this (this website was supposed to be a Christmas present)!
+sudo tail /var/log/apache2/error.log
+https://www.digitalocean.com/community/questions/500-internal-server-error-how-can-i-fix-this-this-website-was-supposed-to-be-a-christmas-present
+
+mod_wsgi (Apache)
+http://flask.pocoo.org/docs/0.10/deploying/mod_wsgi/
+
+FATAL: database “catalog.db” does not exist
+https://discussions.udacity.com/t/fatal-database-catalog-db-does-not-exist/161804
+
+[SOLVED] Configuring Linux: Google OAuth invalid request
+https://discussions.udacity.com/t/solved-configuring-linux-google-oauth-invalid-request/376259
+
+sqlalchemy.exc.OperationalError: (OperationalError) unable to open database file None None
+https://stackoverflow.com/questions/18208492/sqlalchemy-exc-operationalerror-operationalerror-unable-to-open-database-file
+
+Creating user, database and adding access on PostgreSQL
+https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e
+
+Create and Drop Roles in PostgreSQL
+https://support.rackspace.com/how-to/postgresql-creating-and-dropping-roles/
+
+PostgreSQL 9.5.10 Documentation createdb
+https://www.postgresql.org/docs/9.5/static/app-createdb.html
+
+SQLAlchemy 1.2 Documentation Error Messages
+http://docs.sqlalchemy.org/en/latest/errors.html#error-e3q8
+
+The project is running but the Public DNS is not working
+https://discussions.udacity.com/t/the-project-is-running-but-the-public-dns-is-not-working/167501/2
+
+App not running after all this time
+https://discussions.udacity.com/t/app-not-running-after-all-this-time/362885
+
+Virtual Environments
+http://modwsgi.readthedocs.io/en/develop/user-guides/virtual-environments.html
+
+How to List Databases and Tables in PostgreSQL Using psql
+https://chartio.com/resources/tutorials/how-to-list-databases-and-tables-in-postgresql-using-psql/
+postgres=# \c sales
+You are now connected to database "sales" as user "ubuntu".
+sales=#
+
+Start / Stop and Restart Apache 2 Web Server Command
+https://www.cyberciti.biz/faq/star-stop-restart-apache2-webserver/
+
+How to Move, Copy, and Delete Files in Linux
+http://www.hostingadvice.com/how-to/move-copy-delete-files-linux/
