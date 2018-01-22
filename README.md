@@ -21,9 +21,9 @@ Follow these instructions to set up the Linix Server Catalog for the Linix Serve
 
 ### Setup and Configure Instance
 
-Create an Amazon AWS Lightsail account. [1]
+Create an [Amazon AWS Lightsail account](https://portal.aws.amazon.com/).
 
-Create a Ubuntu Linix-based instance on Lightsail. [2]
+Create a [Ubuntu Linix-based instance on Lightsail](https://lightsail.aws.amazon.com/ls/docs/getting-started/article/getting-started-with-amazon-lightsail).
 
 1. Create new instance i.e. my_instance_name on Lightsail.
 2. Create and attach a static ip for your Lightsail instance i.e. my_static_ip.
@@ -45,7 +45,7 @@ Private IP - Example: 127.00.0.01
 
 Find the DNS Address of Instance
 
-There are several sites that allow reverse IP lookup to allow you to do this. [3]
+There are [several sites that allow reverse IP lookup](https://mxtoolbox.com/SuperTool.aspx) to allow you to do this.
 
 In the case of this instance it is: `http://ec2-18-216-39-42.us-east-2.compute.amazonaws.com`
 
