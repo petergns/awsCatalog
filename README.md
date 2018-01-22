@@ -1,7 +1,7 @@
 Placeholder Draft
 
-Initial Set Up Steps
-
+Setup and Configure Instance
+------
 Create an AWS account
 
 Create a Ubuntu Linix-based instance on Lightsail [1]
@@ -51,7 +51,7 @@ When prompted select to install 'Distribution Maintainers version'.
 
 
 Create user accounts
-
+------
 1. Enter Root:
 `sudo su`
 2. Set ubuntu password using:
@@ -79,7 +79,7 @@ When prompted for Full Name add:
 **User Account Note:** You may be prompted to enter this password, so it is best to note these down.
 
 Set IPs and Ports
-
+------
 **Editing Note:** If any of these files are blank, you might not be in the file, if so use:
 `cd /etc/` and `sudo nano hosts`
 1. Make sure you are logged in as the super user grader:
@@ -132,7 +132,7 @@ sudo ufw status
 sudo service ssh restart
 ```
 Create SSH Key Pairs
-
+------
 **SSH Note:** You can generate new keys, but it is best keeping track of them. Once you have created your SSH Key Pair, you can select and copy to a text editor such as sublime text or notepad++ for later use. Lighsail instances through the browser have a paste window, that you can paste from. 
 
 1. Login as user grader:
@@ -165,7 +165,7 @@ Set Timezone to UTC and Install NTP
 `sudo reboot`
 
 Installing Packages for Catalog Application
-
+------
 Install APACHE2
 
 1. SSH into the instance.
@@ -219,7 +219,7 @@ Configure Git
 `sudo git config -global user.email "your_email@emailhost.com"`
 
 Install Required Packages for Project
-
+------
 **Required Packages Note:** Depending on your instance you might have to install more than on this list.
 
 1. Login to grader user with:
@@ -240,13 +240,12 @@ Adding Project Files to Instance
 2. Create catalog directory:
 `sudo mkdir var/www/catalog/`
 3. Move to catalog directory:
- 'cp catalog`
+ `cp catalog`
 4. Clone repository into instance:
 `sudo git clone https://github.com/petergns/linix_server_catalog.git var/www/catalog/catalog`
 5. Move client json files to previous directory:
 `sudo cp var/www/catalog/catalog/client_secrets.json var/www/catalog/client_secrets.json`
 `sudo cp var/www/catalog/catalog/fb_client_secrets.json var/www/catalog/fb_client_secrets.json`
-
 
 
 
