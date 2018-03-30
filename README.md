@@ -47,6 +47,8 @@ Find the DNS Address of Instance
 
 There are [several sites that allow reverse IP lookup](https://mxtoolbox.com/SuperTool.aspx) to allow you to do this.
 
+**Note On IP Reverse Lookup Link:** Need to use the dropdown, and click on 'Reverse Lookup'.
+
 In the case of this instance it is: `http://ec2-18-216-39-42.us-east-2.compute.amazonaws.com`
 
 ### Update the instance
