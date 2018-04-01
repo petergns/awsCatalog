@@ -19,6 +19,15 @@ Follow these instructions to set up the Linux Server Catalog for the Linux Serve
 
 **AWS Instance Note:** It might be required to clear your browser cookies or use more than one browser, if there is a problem of constant logouts under a minute.
 
+### Prepare Application
+
+1. This application has a localhost port, so you should note this for when you Setup and Configure the Instance.
+```
+if __name__ == '__main__':
+    app.debug = True
+    app.secret_key = 'super_secret_key'
+    app.run(host='0.0.0.0', port=5000)
+```
 ### Setup and Configure Instance
 
 Create an [Amazon AWS Lightsail account](https://portal.aws.amazon.com/).
@@ -38,10 +47,9 @@ Private IP - Example: 127.00.0.01
 | HTTP          | TCP           | 80          |
 | CUSTOM        | TCP           | 123         |
 | CUSTOM        | TCP           | 2200        |
-| CUSTOM        | TCP           | 5000        |
+| CUSTOM        | TCP           | **5000**        |
 | CUSTOM        | TCP           | 8000        |
-
-**Note On Ports:** TCP 8000 is Optional, but might be useful for flexibility. 
+**Note on Localhost Port:** The local host port of this application was set to port 5000, so 5000 was included. TCP 8000 is Optional, but might be useful for flexibility. 
 
 Find the DNS Address of Instance
 
@@ -332,6 +340,8 @@ python universe_characters.py
 12. Exit your instance.
 
 ## Login Authorization Configuration
+
+**Note on Localhost Port:** The localhost port of this application was set to port 5000, so 5000 was included.
 
 **Login Authorization Note:** You need to have a [facebook developer account](https://developers.facebook.com/) and a [google developer account](https://console.developers.google.com/).
 
