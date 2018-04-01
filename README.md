@@ -53,7 +53,7 @@ In the case of this instance it is: `http://ec2-18-216-39-42.us-east-2.compute.a
 
 ### Update the instance
 
-1. Login to the instance through SSH on your browser.
+1. Login to the instance through SSH on your browser [as shown here](https://lightsail.aws.amazon.com/ls/docs/getting-started/article/getting-started-with-amazon-lightsail).
 2. Update the update list: `sudo apt-get update`
 3. Upgrade the distribution: `sudo apt-get dist-upgrade`
 When prompted select to install 'Distribution Maintainers version'.
