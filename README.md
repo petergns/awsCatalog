@@ -49,6 +49,7 @@ Private IP - Example: 127.00.0.01
 | CUSTOM        | TCP           | 2200        |
 | CUSTOM        | TCP           | 5000        |
 | CUSTOM        | TCP           | 8000        |
+
 **Note on Localhost Port:** The local host port of this application was set to port 5000, so 5000 was included. TCP 8000 is Optional, but might be useful for flexibility. 
 
 Find the DNS Address of Instance
