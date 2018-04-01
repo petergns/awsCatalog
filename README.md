@@ -363,7 +363,9 @@ http://ec2-18-216-39-42.us-east-2.compute.amazonaws.com/callback
 `sudo nano /var/www/catalog/client_secrets.json`
 8. Restart apache2: `sudo service apache2 restart`
 
-**Adding URIs note:** Not all these are required, but are useful to have if you want to have a locally hosted version.
+**Adding URIs note:** Not all these are required, but are useful to have if you want to have a locally hosted version. 
+
+**Localhost note:** The localhost of this app was set to 5000, so the localhost for the FB Developer and Google Developer accounts was set to 5000. 
 
 Check Web Application
 
