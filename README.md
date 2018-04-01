@@ -342,7 +342,13 @@ python universe_characters.py
 
 ## Login Authorization Configuration
 
-**Note on Localhost Port:** The localhost port of this application was set to port 5000, so 5000 was included.
+**Note on Localhost Port:** The localhost port of this application was set to port 5000 in application.py, so 5000 was included:
+```
+if __name__ == '__main__':
+    app.debug = True
+    app.secret_key = 'super_secret_key'
+    app.run(host='0.0.0.0', port=5000)
+```
 
 **Login Authorization Note:** You need to have a [facebook developer account](https://developers.facebook.com/) and a [google developer account](https://console.developers.google.com/).
 
