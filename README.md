@@ -2,9 +2,9 @@ Linux Server Catalog Project
 ====================
 Project files for the Linux Server Catalog in the Udacity Full Stack Nanodegree.
 
-## This Project is Not Complete
-
 This project contains a database of comic book universe characters, and shows how to host it on a Ubuntu Linux-based Amazon AWS Lightsail instance.
+
+**Note: This Project is Not Complete.**
 
 ## Set Up Instructions
 
