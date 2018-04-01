@@ -21,7 +21,7 @@ Follow these instructions to set up the Linux Server Catalog for the Linux Serve
 
 ### Prepare Application
 
-1. This application has a localhost port, so you should note this for when you Setup and Configure the Instance.
+1. This application has a localhost port in application.py. So you should note down the localhost port, for when you Setup and Configure the Instance:
 ```
 if __name__ == '__main__':
     app.debug = True
