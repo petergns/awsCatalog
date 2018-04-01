@@ -28,6 +28,8 @@ if __name__ == '__main__':
     app.secret_key = 'super_secret_key'
     app.run(host='0.0.0.0', port=5000)
 ```
+**Localhost Note:** So if the port was for example port=6000, then you would include 6000 in the port list for your instance instead.
+
 ### Setup and Configure Instance
 
 Create an [Amazon AWS Lightsail account](https://portal.aws.amazon.com/).
