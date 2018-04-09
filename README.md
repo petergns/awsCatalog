@@ -273,9 +273,10 @@ db-password for password
 1. Login to grader user with: `sudo su - grader`
 2. Check that Git is installed with: `sudo apt-get install git`
 3. Set global username and email:
-`sudo git config -global user.name "your_username`
-`sudo git config -global user.email "your_email@emailhost.com"`
-
+```
+sudo git config -global user.name your_username
+sudo git config -global user.email "your_email@emailhost.com"
+```
 ### Clone Application to Instance
 
 1. Login to grader user (if not logged in already): `sudo su - grader`
