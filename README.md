@@ -173,7 +173,9 @@ Create SSH Key Pairs in Putty [Useful for Windows Users]
 
 ![Putty-Gen in Windows](https://github.com/petergns/linux_server_catalog/blob/master/catalog/PuTTY_Gen.PNG?raw=trueG)
 
-2. Save the generated private and public keys to a folder you can access i.e. documents or ssh.
+2. Convert the key for use on Mac/Windows:
+
+![Putty-Gen Convert Key](https://github.com/petergns/linux_server_catalog/blob/master/catalog/PuTTY-convert.PNG?raw=true)
 
 **SSH Note:** You can generate new keys, but it is best keeping track of them. Once you have created your SSH Key Pair, you can select and copy to a text editor such as sublime text or notepad++ for later use. Lighsail instances through the browser have a paste window, that you can paste from.
 
