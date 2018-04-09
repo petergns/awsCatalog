@@ -4,8 +4,6 @@ Project files for the Linux Server Catalog in the Udacity Full Stack Nanodegree.
 
 This project contains a database of comic book universe characters, and shows how to host it on a Ubuntu Linux-based Amazon AWS Lightsail instance.
 
-**Note: This Project is Not Complete.**
-
 ## Set Up Instructions
 
 Follow these instructions to set up the Linux Server Catalog for the Linux Server Catalog Project.
@@ -212,7 +210,9 @@ Login in using SSH Key
 ![Putty - Auth](https://github.com/petergns/linux_server_catalog/blob/master/temp/PuTTY_auth.PNG?raw=true)
 
 3. You can now login otherwise with:
-`ssh -i /YOUR_FOLDER/id_rsa username@YOUR_LIGHTSAIL_IP_HERE -p 2200`
+`ssh -i YOUR_FOLDER/id_rsa username@YOUR_LIGHTSAIL_IP_HERE -p 2200`
+4. For this instance it would be for example:
+`ssh -i YOUR_FOLDER/grader grader@18.216.39.42 -p 2200`
 
 Set Timezone to UTC and Install NTP
 ------
