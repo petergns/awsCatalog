@@ -418,7 +418,10 @@ python universe_characters.py
 6. Edit `PasswordAuthentication yes` to `PasswordAuthentication no`, if not done already.
 7. Save this file.
 8. Set Firewall with:
-`sudo ufw deny 22/tcp`
+```
+sudo ufw deny 22/tcp
+sudo ufw deny 22
+```
 9. Start Firewall and Check Status with:
 ```
 sudo ufw enable
