@@ -54,7 +54,7 @@ Private IP - Example: 127.00.0.01
 
 **Note on Localhost Port:** The local host port of this application was set to port 5000, but this is not required.
 
-Find the DNS Address of Instance
+4. Find the DNS Address of yopur Instance:
 
 There are [several sites that allow reverse IP lookup](https://mxtoolbox.com/SuperTool.aspx) to allow you to do this.
 
