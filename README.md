@@ -419,8 +419,13 @@ python universe_characters.py
 7. Save this file.
 8. Set Firewall with:
 ```
-sudo ufw deny 22/tcp
-sudo ufw deny 22
+sudo ufw delete 22/tcp
+sudo ufw delete 22
+```
+Or if some are already denied:
+```
+sudo ufw delete deny 22/tcp
+sudo ufw delete deny 22
 ```
 9. Start Firewall and Check Status with:
 ```
