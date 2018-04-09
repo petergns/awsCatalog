@@ -171,11 +171,11 @@ Create SSH Key Pairs in Putty [Useful for Windows Users]
 
 1. In Putty-Gen, the Putty Key Generator: `Generate a public/private keypair`
 
-![Putty-Gen in Windows](https://github.com/petergns/linux_server_catalog/blob/master/catalog/PuTTY_Gen.PNG?raw=trueG)
+![Putty-Gen in Windows](https://github.com/petergns/linux_server_catalog/blob/master/temp/PuTTY_Gen.PNG?raw=trueG)
 
 2. Convert the key for use on Mac/Windows:
 
-![Putty-Gen Convert Key](https://github.com/petergns/linux_server_catalog/blob/master/catalog/PuTTY-convert.PNG?raw=true)
+![Putty-Gen Convert Key](https://github.com/petergns/linux_server_catalog/blob/master/temp/PuTTY-convert.PNG?raw=true)
 
 3. You will want to save it where you can find it i.e. such as the /.ssh folder or /documents.
 
@@ -205,11 +205,11 @@ sudo chmod 644 /home/grader/.ssh/authorized_keys
 Login in using SSH Key 
 ------
 1. When logging in with Putty, you type in your port number and static IP:
-![Putty - Session](https://github.com/petergns/linux_server_catalog/blob/master/catalog/PuTTY_session.PNG?raw=true)
+![Putty - Session](https://github.com/petergns/linux_server_catalog/blob/master/temp/PuTTY_session.PNG?raw=true)
 
 2. Then you select the private key file you saved:
 
-![Putty - Auth](https://github.com/petergns/linux_server_catalog/blob/master/catalog/PuTTY_auth.PNG?raw=true)
+![Putty - Auth](https://github.com/petergns/linux_server_catalog/blob/master/temp/PuTTY_auth.PNG?raw=true)
 
 3. You can now login otherwise with:
 `ssh -i /YOUR_FOLDER/id_rsa username@YOUR_LIGHTSAIL_IP_HERE -p 2200`
