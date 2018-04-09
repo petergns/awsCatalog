@@ -442,7 +442,7 @@ http://ec2-18-216-39-42.us-east-2.compute.amazonaws.com/callback
 
 **Localhost note:** The localhost of this app was set to 5000, so the localhost for the FB Developer and Google Developer accounts was set to 5000.
 
-###  Check Web Application
+##  Check Web Application
 
 Your web application should be functioning.
 
