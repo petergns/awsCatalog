@@ -173,16 +173,20 @@ Create SSH Key Pairs in Putty [Useful for Windows Users]
 
 ![Putty-Gen in Windows](https://github.com/petergns/linux_server_catalog/blob/master/temp/PuTTY_Gen.PNG?raw=trueG)
 
-2. Convert the key for use on Mac/Windows:
+2. You will want to save it where you can find it i.e. such as the /.ssh folder or /documents.
+
+3. Convert the key for use on Mac/Windows:
 
 ![Putty-Gen Convert Key](https://github.com/petergns/linux_server_catalog/blob/master/temp/PuTTY-convert.PNG?raw=true)
 
-3. You will want to save it where you can find it i.e. such as the /.ssh folder or /documents.
+5. You will want to save it where you can find it i.e. such as the /.ssh folder or /documents.
 
 **SSH Note:** You can generate new keys, but it is best keeping track of them. Once you have created your SSH Key Pair, you can select and copy to a text editor such as sublime text or notepad++ for later use. Lighsail instances through the browser have a paste window, that you can paste from.
 
 Add SSH Key Pairs
 ------
+
+**OpenSSH key Note:** If you are using Putty, you want to open Puttygen, and load the .ppk file, which holds your key. Then you want to copy this for pasting into the instance at step 3.
 
 1. Login in as root with: `sudo su`
 2. go to the ssh directory in the grader directory:
