@@ -414,7 +414,7 @@ python universe_characters.py
 3. Edit the sshd_config file: `sudo nano /etc/ssh/sshd_config`
 4. Remove the text: `Port 2200`
 5. Edit PermitRootLogin prohibit-password to: `PermitRootLogin no`
-6. Edit PasswordAuthentication no to: `PasswordAuthentication no`
+6. Edit `PasswordAuthentication yes` to `PasswordAuthentication no`, if not done already.
 7. Save this file.
 8. Set Firewall with:
 `sudo ufw deny 22/tcp`
