@@ -204,6 +204,7 @@ Login in using SSH Key
 ![Putty - Session](https://github.com/petergns/linux_server_catalog/blob/master/catalog/PuTTY_session.PNG?raw=true)
 
 2. Then you select the private key file you saved:
+
 ![Putty - Auth](https://github.com/petergns/linux_server_catalog/blob/master/catalog/PuTTY_auth.PNG?raw=true)
 
 3. You can now login otherwise with:
