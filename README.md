@@ -17,7 +17,9 @@ Follow these instructions to set up the Linux Server Catalog for the Linux Serve
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 * [Vagrant](https://www.vagrantup.com/).
 * [Ubuntu Linux Virtual Machine](https://github.com/udacity/fullstack-nanodegree-vm).
+* You will need an SSH client, such as [Putty - Windows](https://www.putty.org/)/[Putty - Mac](https://www.ssh.com/ssh/putty/mac/) or otherwise a terminal that can send/recieve ssh connections.
 * [Optional - Github Desktop](https://desktop.github.com/).
+
 
 **AWS Instance Note:** It might be required to clear your browser cookies or use more than one browser, if there is a problem of constant logouts under a minute.
 
