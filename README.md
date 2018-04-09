@@ -192,7 +192,7 @@ cd ssh
 ```
 2. Edit the authorized_keys file with: `sudo nano authorized_keys`
 3. Copy/Paste your OpenSSH key into the paste area, then copy this into the authorized_keys file:
-![Copy/Paste Tool in Browser](https://github.com/petergns/linux_server_catalog/blob/master/catalog/copy_paste.PNG?raw=true)
+![Copy/Paste Tool in Browser](https://github.com/petergns/linux_server_catalog/blob/master/temp/copy_paste.PNG?raw=true)
 4. Save this file.
 5. Next apply permissions to the ssh folder and authorized keys to the user grader.
 ```
