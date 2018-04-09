@@ -451,13 +451,15 @@ Your web application should be functioning.
 3. Login with your Facebook Account.
 4. View catalog data.
 
-### Useful Editors:
+## Useful Editors:
 <ul>
   <li>Atom(https://atom.io/)
   <li>Git Nano(https://www.nano-editor.org/)
   <li>Notepad++(https://notepad-plus-plus.org/)
   <li>Sublime Text(https://www.sublimetext.com/)
 </ul>
+
+## How the Application Looks
 
 ### Catalog When Logged In
 ![Image of Output](https://github.com/petergns/item-catalog-project/blob/master/comic-universe-catalog.PNG)
