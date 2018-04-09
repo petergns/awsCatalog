@@ -120,7 +120,6 @@ STATIC_IP_HERE grader
 8. Edit PasswordAuthentication no to: `PasswordAuthentication yes`
 9. Save this file.
 
-**Note on Ports:** If you disable Port 22 on Lightsail, you will be unable to login on the Ligthsail web page.
 **Note on PermitRootLogin:** Root Login is best kept disabled for security reasons, and only enabled when you need to use it.
 
 ### Create Instance Snapshot/Backup
