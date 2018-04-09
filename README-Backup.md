@@ -21,15 +21,17 @@ Follow these instructions to set up the Linux Server Catalog for the Linux Serve
 
 **AWS Instance Note:** It might be required to clear your browser cookies or use more than one browser, if there is a problem of constant logouts under a minute.
 
-### Application Debugging Note
+### Prepare Application
 
-This application has a localhost port in application.py for locally hosted debugging purposes:
+1. This application has a localhost port in application.py. So you should note down the localhost port, for when you Setup and Configure the Instance:
 ```
 if __name__ == '__main__':
     app.debug = True
     app.secret_key = 'super_secret_key'
     app.run(host='0.0.0.0', port=5000)
 ```
+**Localhost Note:** So if the port was for example port=6000, then you would include 6000 in the port list for your instance instead.
+
 ### Setup and Configure Instance
 
 Create an [Amazon AWS Lightsail account](https://portal.aws.amazon.com/).
@@ -52,7 +54,7 @@ Private IP - Example: 127.00.0.01
 | CUSTOM        | TCP           | **5000**    |
 | CUSTOM        | TCP           | 8000        |
 
-**Note on Localhost Port:** The local host port of this application was set to port 5000, but this is not required.
+**Note on Localhost Port:** The local host port of this application was set to port 5000, so 5000 was included. Port 8000 is optional, but might be useful for flexibility.
 
 Find the DNS Address of Instance
 
@@ -84,16 +86,15 @@ sudo apt-get upgrade
 1. Enter Root: `sudo su`
 2. Set ubuntu password using: `passwd ubuntu`
 You will be asked to set a new UNIX password.
-3. Make ubuntu a super user with: `usermod -aG sudo ubuntu`
-4. Exit Root with exit command: `exit`
-5. Enter ubuntu account as super user: `sudo su - ubuntu`
-6. Create grader user:
+3. Exit Root with exit command: `exit`
+4. Enter ubuntu account as super user: `sudo su - ubuntu`
+5. Create grader user and set UNIX Password:
 `sudo adduser grader`
-7. Set UNIX Password for grader user when prompted.
 When prompted for Full Name add: `Udacity Grader` or `Grader`
-8. Make grader a super user with: `usermod -aG sudo grader`
-9. Enter grader account as super user: `sudo su - grader`
-10. Create catalog user and set UNIX Password: `sudo adduser catalog`
+6. Create grader directory with: `sudo useradd -m -s /bin/bash grader`
+7. Make grader a super user with: `usermod -aG sudo username`
+8. Enter grader account as super user: `sudo su - grader`
+9. Create catalog user and set UNIX Password: `sudo adduser catalog`
 When prompted for Full Name add: `Database Catalog` or `Catalog`
 
 **User Account Note:** You may be prompted to enter this password, so it is best to note these down.
@@ -104,29 +105,20 @@ When prompted for Full Name add: `Database Catalog` or `Catalog`
 `cd /etc/` and `sudo nano hosts`
 1. Make sure you are logged in as the super user grader: `sudo su - grader`
 2. Enter hosts file: `sudo nano /etc/hosts`
-3. Write in this file your IPs and the users for the application:
-```
-127.0.0.1 localhost
-127.0.1.1 ip-00-000-00-00
-127.0.1.1 ip-000-00-0-00
-STATIC_IP_HERE server
-STATIC_IP_HERE ubuntu
-STATIC_IP_HERE grader
-```
-
-4. Save with ctrl+x and y on prompt (or as directed by nano editor)
-5. Add Port 2220 to sshd_config file: `sudo nano /etc/ssh/sshd_config`
-6. Underneath the existing Port 22 (or SSH port) write: `Port 2200`
-7. Edit PermitRootLogin prohibit-password to: `PermitRootLogin no`
-8. Edit PasswordAuthentication no to: `PasswordAuthentication yes`
-9. Save this file.
+Underneath the existing IP write: `STATIC_IP_HERE ubuntu`
+Save with ctrl+x and y on prompt (or as directed by nano editor)
+3. Add Port 2220 to sshd_config file: `sudo nano /etc/sshd_config`
+4. Underneath the existing Port 22 (or SSH port) write: `Port 2200`
+5. Edit PermitRootLogin prohibit-password to: `PermitRootLogin no`
+6. Edit PasswordAuthentication no to: `PasswordAuthentication yes`
+Save with ctrl+x and y on prompt (or as directed by nano editor)
 
 **Note on Ports:** If you disable Port 22 on Lightsail, you will be unable to login on the Ligthsail web page.
 **Note on PermitRootLogin:** Root Login is best kept disabled for security reasons, and only enabled when you need to use it.
 
 ### Create Instance Snapshot/Backup
 
-**Note on Snapshots:** It is useful to have a snapshot just in case anything goes wrong while using your instance, even if it might take a while to create. You can always delete and add snapshots as you go.
+**Note on Snapshots:** It is useful to have a snapshot just in case anything goes wrong while using your instance, even if it might take a few minutes to create. You can always delete and add instances as you go.
 
 1. Exit your instance using: `exit`
 2. On the Lightsail web page, click on your instance, and add a snapshot.
@@ -151,57 +143,27 @@ sudo ufw enable
 sudo ufw status
 sudo service ssh restart
 ```
-
 Create SSH Key Pairs
 ------
+This section of the readme is not complete yet due to difficulties in logging in with keypairs remotely.
 
-1. Login in as root with: `sudo su`
-2. Create ssh directory and apply permissions to grader:
+**SSH Note:** You can generate new keys, but it is best keeping track of them. Once you have created your SSH Key Pair, you can select and copy to a text editor such as sublime text or notepad++ for later use. Lighsail instances through the browser have a paste window, that you can paste from.
+
+1. Login as user grader: `sudo su - grader`
+2. Create SSH Key pair with: `ssh-keygen -t rsa`
+When prompted for where to place type: grader
+3. While still logged in as grader do the following:
 ```
 sudo mkdir /home/grader/.ssh
 sudo chown grader:grader /home/grader/.ssh
 sudo chmod 70 /home/grader/ssh
-```
-3. Login as user grader: `sudo su - grader`
-4. Create SSH Key pair with: `ssh-keygen -t rsa`
-5. When prompted for where to place type: `grader`
-
-Create SSH Key Pairs in Putty [Useful for Windows Users]
-------
-1. In Putty-Gen, the Putty Key Generator:
-[INSERT IMAGE HERE]
-`Generate a public/private keypair`
-2. Save the generated private and public keys to a folder you can access i.e. documents or ssh.
-
-**SSH Note:** You can generate new keys, but it is best keeping track of them. Once you have created your SSH Key Pair, you can select and copy to a text editor such as sublime text or notepad++ for later use. Lighsail instances through the browser have a paste window, that you can paste from.
-
-Add SSH Key Pairs
-------
-
-1. Login in as root with: `sudo su`
-2. go to the ssh directory in the grader directory:
-```
-cd /home/grader/
-cd ssh
-```
-2. Edit the authorized_keys file with:
-`sudo nano authorized_keys`
-3. Copy/Paste your OpenSSH key into the paste area, then copy this into the authorized_keys file:
-[COPY PASTE IMAGE HERE]
-4. Save this file.
-5. Next apply permissions to the ssh folder and authorized keys to the user grader.
-```
 sudo chown grader:grader /home/grader/.ssh/authorized_keys
 sudo chmod 644 /home/grader/.ssh/authorized_keys
 ```
-6. Use the exit command to leave root:
-`exit`
+This will apply permissions to the ssh folder and authorized keys to the user grader.
 
-7. For Logging in with Putty:
-
-8. You can now login otherwise with:
-`ssh -i /YOUR_FOLDER/id_rsa username@YOUR_LIGHTSAIL_IP_HERE -p 2200`
-
+You can now login with:
+ssh -i /.ssh/id_rsa grader@YOUR_LIGHTSAIL_IP_HERE -p 2200
 
 Set Timezone to UTC and Install NTP
 ------
@@ -382,33 +344,17 @@ python universe_characters.py
 9. There should be a print to confirm that characters have been added.
 10. Exit postgres user with: `exit`
 11. Restart Apache2 with: `sudo service apache2 restart`
-
-### Final Authentication and Login Options
-
-**SSH Login Note:** You must be able to login through a port other than Port 22, or you will be locked out.
-
-**Editing Note:** If any of these files are blank, you might not be in the file, if so use:
-`cd /etc/ssh/` and `sudo nano sshd_config`
-
-1. Make sure you are logged in as the super user grader: `sudo su - grader`
-2. Enter hosts file: `sudo nano /etc/ssh/sshd_config`
-3. Edit the sshd_config file: `sudo nano /etc/ssh/sshd_config`
-4. Remove the text: `Port 2200`
-5. Edit PermitRootLogin prohibit-password to: `PermitRootLogin no`
-6. Edit PasswordAuthentication no to: `PasswordAuthentication no`
-7. Save this file.
-8. Set Firewall with:
-`sudo ufw deny 22/tcp`
-9. Start Firewall and Check Status with:
-```
-sudo ufw enable
-sudo ufw status
-sudo service ssh restart
-```
-10. Reboot the instance, and close the window.
-11. You can now login through Port 2200, but not through Port 22.
+12. Exit your instance.
 
 ## Login Authorization Configuration
+
+**Note on Localhost Port:** The localhost port of this application was set to port 5000 in application.py, so 5000 was included:
+```
+if __name__ == '__main__':
+    app.debug = True
+    app.secret_key = 'super_secret_key'
+    app.run(host='0.0.0.0', port=5000)
+```
 
 **Login Authorization Note:** You need to have a [facebook developer account](https://developers.facebook.com/) and a [google developer account](https://console.developers.google.com/).
 
@@ -444,7 +390,7 @@ http://ec2-18-216-39-42.us-east-2.compute.amazonaws.com/callback
 
 **Localhost note:** The localhost of this app was set to 5000, so the localhost for the FB Developer and Google Developer accounts was set to 5000.
 
-###  Check Web Application
+Check Web Application
 
 Your web application should be functioning.
 
