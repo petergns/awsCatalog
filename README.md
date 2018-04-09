@@ -497,9 +497,11 @@ Your web application should be functioning.
 ## Acknowledgments
 Acknowledgments to the following for helping me develop this project:
 * [Udacity](https://www.udacity.com/)
-* [Amazon AWS Ligthsail](https://aws.amazon.com/lightsail/)
+* [Amazon AWS Lightsail](https://aws.amazon.com/lightsail/)
+* [Amazon AWS Lightsail Forums](https://forums.aws.amazon.com/forum.jspa?forumID=231&start=0)
 * [Stueken's Linux Configuration](https://github.com/stueken/FSND-P5_Linux-Server-Configuration)
 * [The Previous Project](https://github.com/petergns/item-catalog-project)
+
 
 ## Sources
 Create an Amazon AWS Lightsail account
