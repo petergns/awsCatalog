@@ -188,7 +188,7 @@ Add SSH Key Pairs
 
 **OpenSSH key Note:** If you are using Putty, you want to open Puttygen, and load the .ppk file, which holds your key. Then you want to copy this for pasting into the instance at step 3.
 
-![Putty - Load Key](https://github.com/petergns/linux_server_catalog/blob/master/temp/PuTTy-load_key.PNG?raw=true)
+![Putty - Load Key](https://github.com/petergns/linux_server_catalog/blob/master/temp/PuTTy-load_ssh.PNG?raw=true)
 
 1. Login in as root with: `sudo su`
 2. go to the ssh directory in the grader directory:
