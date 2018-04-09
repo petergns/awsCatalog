@@ -383,7 +383,7 @@ python universe_characters.py
 10. Exit postgres user with: `exit`
 11. Restart Apache2 with: `sudo service apache2 restart`
 
-### Final Authentication and Login Options
+## Final Authentication and Login Options
 
 **SSH Login Note:** You must be able to login through a port other than Port 22, or you will be locked out.
 
