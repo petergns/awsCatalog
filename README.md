@@ -569,3 +569,12 @@ SQLAlchemy 1.2 Documentation Error Messages
 
 Virtual Environments
 [25]: http://modwsgi.readthedocs.io/en/develop/user-guides/virtual-environments.html
+
+Adding a second user to access your instance
+[26]: http://queirozf.com/entries/amazon-ec2-server-instance-adding-a-second-user-to-access-your-instance
+
+Trouble connecting with SSH to Ubuntu server
+[27]: https://forums.aws.amazon.com/thread.jspa?messageID=762616#762616
+
+SSH Public Key - No supported authentication methods available
+[28]: https://askubuntu.com/questions/204400/ssh-public-key-no-supported-authentication-methods-available-server-sent-publ
