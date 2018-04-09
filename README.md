@@ -104,16 +104,15 @@ When prompted for Full Name add: `Database Catalog` or `Catalog`
 `cd /etc/` and `sudo nano hosts`
 1. Make sure you are logged in as the super user grader: `sudo su - grader`
 2. Enter hosts file: `sudo nano /etc/hosts`
-3. Write in this file your IPs and the users for the application:
+3. Write in this file your IPs and the users for the application.
 ```
 127.0.0.1 localhost
-127.0.1.1 ip-00-000-00-00
-127.0.1.1 ip-000-00-0-00
+127.0.1.1 ip-STATIC_IP_HERE
+127.0.1.1 ip-PRIVATE_IP_HERE
 STATIC_IP_HERE server
 STATIC_IP_HERE ubuntu
 STATIC_IP_HERE grader
 ```
-
 4. Save with ctrl+x and y on prompt (or as directed by nano editor)
 5. Add Port 2220 to sshd_config file: `sudo nano /etc/ssh/sshd_config`
 6. Underneath the existing Port 22 (or SSH port) write: `Port 2200`
@@ -168,6 +167,7 @@ sudo chmod 70 /home/grader/ssh
 
 Create SSH Key Pairs in Putty [Useful for Windows Users]
 ------
+
 1. In Putty-Gen, the Putty Key Generator:
 [INSERT IMAGE HERE]
 `Generate a public/private keypair`
@@ -201,7 +201,6 @@ sudo chmod 644 /home/grader/.ssh/authorized_keys
 
 8. You can now login otherwise with:
 `ssh -i /YOUR_FOLDER/id_rsa username@YOUR_LIGHTSAIL_IP_HERE -p 2200`
-
 
 Set Timezone to UTC and Install NTP
 ------
