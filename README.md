@@ -132,7 +132,7 @@ STATIC_IP_HERE grader
 2. On the Lightsail web page, click on your instance, and add a snapshot.
 3. Wait for it to complete creating your snapshot.
 
-Configure Firewall for your Instance
+### Configure Firewall for your Instance
 
 1. Enter grader account as super user: `sudo su - grader`
 2. Set Firewall with:
@@ -169,9 +169,10 @@ sudo chmod 70 /home/grader/ssh
 Create SSH Key Pairs in Putty [Useful for Windows Users]
 ------
 
-1. In Putty-Gen, the Putty Key Generator:
-[INSERT IMAGE HERE]
-`Generate a public/private keypair`
+1. In Putty-Gen, the Putty Key Generator: `Generate a public/private keypair`
+
+![Putty-Gen in Windows](https://github.com/petergns/linux_server_catalog/blob/master/catalog/PuTTY_Gen.PNG?raw=trueG)
+
 2. Save the generated private and public keys to a folder you can access i.e. documents or ssh.
 
 **SSH Note:** You can generate new keys, but it is best keeping track of them. Once you have created your SSH Key Pair, you can select and copy to a text editor such as sublime text or notepad++ for later use. Lighsail instances through the browser have a paste window, that you can paste from.
@@ -185,10 +186,9 @@ Add SSH Key Pairs
 cd /home/grader/
 cd ssh
 ```
-2. Edit the authorized_keys file with:
-`sudo nano authorized_keys`
+2. Edit the authorized_keys file with: `sudo nano authorized_keys`
 3. Copy/Paste your OpenSSH key into the paste area, then copy this into the authorized_keys file:
-[COPY PASTE IMAGE HERE]
+![Copy/Paste Tool in Browser](https://github.com/petergns/linux_server_catalog/blob/master/catalog/copy_paste.PNG?raw=true)
 4. Save this file.
 5. Next apply permissions to the ssh folder and authorized keys to the user grader.
 ```
@@ -198,9 +198,15 @@ sudo chmod 644 /home/grader/.ssh/authorized_keys
 6. Use the exit command to leave root:
 `exit`
 
-7. For Logging in with Putty:
+Login in using SSH Key 
+------
+1. When logging in with Putty, you type in your port number and static IP:
+![Putty - Session](https://github.com/petergns/linux_server_catalog/blob/master/catalog/PuTTY_session.PNG?raw=true)
 
-8. You can now login otherwise with:
+2. Then you select the private key file you saved:
+![Putty - Auth](https://github.com/petergns/linux_server_catalog/blob/master/catalog/PuTTY_auth.PNG?raw=true)
+
+3. You can now login otherwise with:
 `ssh -i /YOUR_FOLDER/id_rsa username@YOUR_LIGHTSAIL_IP_HERE -p 2200`
 
 Set Timezone to UTC and Install NTP
