@@ -18,7 +18,6 @@ Follow these instructions to set up the Linux Server Catalog for the Linux Serve
 * You will need an SSH client, such as [Putty - Windows](https://www.putty.org/)/[Putty - Mac](https://www.ssh.com/ssh/putty/mac/) or otherwise a terminal that can send/recieve ssh connections.
 * [Optional - Github Desktop](https://desktop.github.com/).
 
-
 **AWS Instance Note:** It might be required to clear your browser cookies or use more than one browser, if there is a problem of constant logouts under a minute.
 
 ### Application Debugging Note
@@ -65,6 +64,9 @@ In the case of this instance it is: `http://ec2-18-216-39-42.us-east-2.compute.a
 ### Update the instance
 
 1. Login to the instance through SSH on your browser [as shown here](https://lightsail.aws.amazon.com/ls/docs/getting-started/article/getting-started-with-amazon-lightsail).
+
+![Login SSH](https://github.com/petergns/linux_server_catalog/blob/master/temp/ssh-login.PNG?raw=true)
+
 2. Update the update list: `sudo apt-get update`
 3. Upgrade the distribution: `sudo apt-get dist-upgrade`
 When prompted select to install 'Distribution Maintainers version'.
