@@ -417,7 +417,10 @@ python universe_characters.py
 5. Edit PermitRootLogin prohibit-password to: `PermitRootLogin no`
 6. Edit `PasswordAuthentication yes` to `PasswordAuthentication no`, if not done already.
 7. Save this file.
-8. Set Firewall with:
+8. Edit the sshd_config file: `sudo nano /etc/ssh/ssh_config`
+9. Edit `PasswordAuthentication yes` to `PasswordAuthentication no`, if not done already.
+10. Save this file.
+11. Set Firewall with:
 ```
 sudo ufw delete 22/tcp
 sudo ufw delete 22
