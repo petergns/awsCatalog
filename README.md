@@ -39,7 +39,7 @@ Create a [Ubuntu Linux-based instance on Lightsail](https://lightsail.aws.amazon
 2. Create and attach a static ip for your Lightsail instance i.e. my_static_ip.
 3. Note the Public and Private IPs for your instance, and add the following ports:
 
-Static/Public IP: `18.216.39.42`
+Static/Public IP - Example: `18.216.39.42`
 Private IP - Example: 127.00.0.01
 
 | Application   | Protocol      | Port Range  |
