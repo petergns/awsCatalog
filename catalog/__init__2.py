@@ -20,12 +20,12 @@ from oauth2client.client import flow_from_clientsecrets, FlowExchangeError
 app = Flask(__name__)
 
 # Add path to client_secrets file i.e. /var/www/catalog/catalog/
-CLIENT_ID = json.loads(open('/var/www/catalog/catalog/client_secrets.json', 'r').read())[
+CLIENT_ID = json.loads(open("/var/www/catalog/catalog/client_secrets.json", "r").read())[
     'web']['client_id']
 
 # Connect to Database
 # Add link to postgresql database ie. postgresql//database_name:db-pasasword@localhost/catalog
-engine = create_engine('postgresql://catalog:db-password@localhost/catalog')
+engine = create_engine("postgresql://catalog:db-password@localhost/catalog")
 Base.metadata.bind = engine
 
 # Create database session
@@ -37,12 +37,12 @@ session = DBSession()
 
 def createUser(login_session):
     newUser = User(
-        name=login_session['username'],
-        email=login_session['email'],
-        picture=login_session['picture'])
+        name=login_session["username"],
+        email=login_session["email"],
+        picture=login_session["picture"])
     session.add(newUser)
     session.commit()
-    user = session.query(User).filter_by(email=login_session['email']).one()
+    user = session.query(User).filter_by(email=login_session["email"]).one()
     return user.id
 
 
@@ -59,8 +59,8 @@ def getUserID(email):
         return None
 
 
-@app.route('/')
-@app.route('/catalog')
+@app.route("/")
+@app.route("/catalog")
 def showCategories():
     # Get all categories
     categories = session.query(Category).all()
@@ -68,18 +68,18 @@ def showCategories():
     catChars = session.query(CatChar).all()
     # Check if user is logged in
     if 'username' not in login_session:
-        return render_template('publicCategories.html',
+        return render_template("publicCategories.html",
                                categories=categories,
                                catChars=catChars)
     else:
         return render_template(
-            'categories.html',
+            "categories.html",
             categories=categories,
             catChars=catChars)
 
 
-@app.route('/catalog/<int:catalog_id>')
-@app.route('/catalog/<int:catalog_id>/chars')
+@app.route("/catalog/<int:catalog_id>")
+@app.route("/catalog/<int:catalog_id>/chars")
 def showCategory(catalog_id):
     # Get all categories
     categories = session.query(Category).all()
@@ -94,21 +94,21 @@ def showCategory(catalog_id):
         category_id=catalog_id).count()
     # Check if user is logged in
     if 'username' not in login_session:
-        return render_template('publicCategory.html',
+        return render_template("publicCategory.html",
                                categories=categories,
                                catChars=catChars,
                                categoryName=categoryName,
                                catCharsCount=catCharsCount)
     else:
         return render_template(
-            'category.html',
+            "category.html",
             categories=categories,
             catChars=catChars,
             categoryName=categoryName,
             catCharsCount=catCharsCount)
 
 
-@app.route('/catalog/<int:catalog_id>/chars/<int:char_id>')
+@app.route("/catalog/<int:catalog_id>/chars/<int:char_id>")
 def showCatChar(catalog_id, char_id):
     # Get category character
     catChar = session.query(CatChar).filter_by(id=char_id).first()
@@ -116,53 +116,53 @@ def showCatChar(catalog_id, char_id):
     creator = getUserInfo(catChar.user_id)
     # Check if user is logged in
     if 'username' not in login_session:
-        return render_template('publicCategoryChar.html',
+        return render_template("publicCategoryChar.html",
                                catChar=catChar,
                                creator=creator)
     else:
-        return render_template('catChar.html',
+        return render_template("catChar.html",
                                catChar=catChar,
                                creator=creator)
 
 
-@app.route('/catalog/add', methods=['GET', 'POST'])
+@app.route('/catalog/add', methods=["GET", "POST"])
 def addCatChar():
     # Check if user is logged in
     if 'username' not in login_session:
-        return redirect('/login')
-    if request.method == 'POST':
+        return redirect("/login")
+    if request.method == "POST":
         # TODO: Retain data when there is an error
-        if not request.form['name']:
-            flash('Please add character/s name')
-            return redirect(url_for('addCatChar'))
+        if not request.form["name"]:
+            flash("Please add character/s name")
+            return redirect(url_for("addCatChar"))
 
-        if not request.form['description']:
-            flash('Please add a description')
-            return redirect(url_for('addCatChar'))
+        if not request.form["description"]:
+            flash("Please add a description")
+            return redirect(url_for("addCatChar"))
         # Add category char
         newCatChar = CatChar(
-            name=request.form['name'],
-            description=request.form['description'],
-            category_id=request.form['category'],
-            user_id=login_session['user_id'])
+            name=request.form["name"],
+            description=request.form["description"],
+            category_id=request.form["category"],
+            user_id=login_session["user_id"])
         session.add(newCatChar)
         session.commit()
-        return redirect(url_for('showCategories'))
+        return redirect(url_for("showCategories"))
     else:
         # Get all categories
         categories = session.query(Category).all()
-        return render_template('addCatChar.html', categories=categories)
+        return render_template("addCatChar.html", categories=categories)
 
 
 @app.route(
-    '/catalog/<int:catalog_id>/chars/<int:char_id>/edit',
+    "/catalog/<int:catalog_id>/chars/<int:char_id>/edit",
     methods=[
-        'GET',
-        'POST'])
+        "GET",
+        "POST"])
 def editCatChar(catalog_id, char_id):
     # Check if user is logged in
-    if 'username' not in login_session:
-        return redirect('/login')
+    if "username" not in login_session:
+        return redirect("/login")
     # Get category character
     catChar = session.query(CatChar).filter_by(id=char_id).first()
     # Get creator of character
@@ -170,116 +170,116 @@ def editCatChar(catalog_id, char_id):
     # Session query for edited character content
     editedChar = session.query(CatChar).filter_by(id=char_id).first()
     # Check if logged in user is creator of category character
-    if creator.id != login_session['user_id']:
-        return redirect(url_for('showCategories'))
+    if creator.id != login_session["user_id"]:
+        return redirect(url_for("showCategories"))
     # Get all categories Edit This Udacity
     categories = session.query(Category).all()
-    if request.method == 'POST':
-        if request.form['name']:
-            editedChar.name = request.form['name']
-        if request.form['description']:
-            editedChar.description = request.form['description']
-        if request.form['category']:
-            editedChar.category_id = request.form['category']
+    if request.method == "POST":
+        if request.form["name"]:
+            editedChar.name = request.form["name"]
+        if request.form["description"]:
+            editedChar.description = request.form["description"]
+        if request.form["category"]:
+            editedChar.category_id = request.form["category"]
         session.add(editedChar)
         session.commit()
         return redirect(
             url_for(
-                'showCatChar',
+                "showCatChar",
                 catalog_id=catChar.category_id,
                 char_id=catChar.id))
     else:
         return render_template(
-            'editCatChar.html',
+            "editCatChar.html",
             categories=categories,
             catChar=catChar, char=editedChar)
 
 
 @app.route(
-    '/catalog/<int:catalog_id>/chars/<int:char_id>/delete',
+    "/catalog/<int:catalog_id>/chars/<int:char_id>/delete",
     methods=[
-        'GET',
-        'POST'])
+        "GET",
+        "POST"])
 def deleteCatChar(catalog_id, char_id):
     # Check if user is logged in
-    if 'username' not in login_session:
-        return redirect('/login')
+    if "username" not in login_session:
+        return redirect("/login")
     # Get category character
     catChar = session.query(CatChar).filter_by(id=char_id).first()
     # Get creator of character
     creator = getUserInfo(catChar.user_id)
     # Check if logged in user is creator of category character
-    if creator.id != login_session['user_id']:
-        return redirect(url_for('showCategories'))
+    if creator.id != login_session["user_id"]:
+        return redirect(url_for("showCategories"))
 
-    if request.method == 'POST':
+    if request.method == "POST":
         session.delete(catChar)
         session.commit()
         return redirect(
             url_for(
-                'showCategory',
+                "showCategory",
                 catalog_id=catChar.category_id))
     else:
-        return render_template('deleteCatChar.html', catChar=catChar)
+        return render_template("deleteCatChar.html", catChar=catChar)
 
 
-@app.route('/login')
+@app.route("/login")
 def login():
     # Create anti-forgery state token
-    state = ''.join(
+    state = "".join(
         random.choice(
             string.ascii_uppercase +
             string.digits) for x in xrange(32))
-    login_session['state'] = state
-    return render_template('login.html', STATE=state)
+    login_session["state"] = state
+    return render_template("login.html", STATE=state)
 
 
-@app.route('/logout')
+@app.route("/logout")
 def logout():
-    if login_session['provider'] == 'facebook':
+    if login_session["provider"] == "facebook":
         fbdisconnect()
-        del login_session['facebook_id']
+        del login_session["facebook_id"]
 
-    if login_session['provider'] == 'google':
+    if login_session['provider'] == "google":
         gdisconnect()
-        del login_session['gplus_id']
-        del login_session['access_token']
+        del login_session["gplus_id"]
+        del login_session["access_token"]
 
-    del login_session['username']
-    del login_session['email']
-    del login_session['picture']
-    del login_session['user_id']
-    del login_session['provider']
+    del login_session["username"]
+    del login_session["email"]
+    del login_session["picture"]
+    del login_session["user_id"]
+    del login_session["provider"]
 
-    return redirect(url_for('showCategories'))
+    return redirect(url_for("showCategories"))
 
 # 1 Create anti-forgery state token
 
 
-@app.route('/login')
+@app.route("/login")
 def showLogin():
-    state = ''.join(random.choice(string.ascii_uppercase + string.digits)
+    state = "".join(random.choice(string.ascii_uppercase + string.digits)
                     for x in xrange(32))
-    login_session['state'] = state
+    login_session["state"] = state
     # return "The current session state is %s" % login_session['state']
-    return render_template('login.html', STATE=state)
+    return render_template("login.html", STATE=state)
 
 # Add path to fb_client_secrets.json i.e. /var/www/catalog/catalog/
   
 # Connect to Facebook
-@app.route('/fbconnect', methods=['POST'])
+@app.route("/fbconnect", methods=["POST"])
 def fbconnect():
-    if request.args.get('state') != login_session['state']:
-        response = make_response(json.dumps('Invalid state parameter.'), 401)
-        response.headers['Content-Type'] = 'application/json'
+    if request.args.get("state") != login_session["state"]:
+        response = make_response(json.dumps("Invalid state parameter."), 401)
+        response.headers["Content-Type"] = "application/json"
         return response
     access_token = request.data
     print "access token received %s " % access_token
     # 3 Gets info from fb clients secrets
-    app_id = json.loads(open('/var/www/catalog/catalog/fb_client_secrets.json', 'r').read())[
-        'web']['app_id']
+    app_id = json.loads(open("/var/www/catalog/catalog/fb_client_secrets.json", "r").read())[
+        "web"]["app_id"]
     app_secret = json.loads(
-        open('/var/www/catalog/catalog/fb_client_secrets.json', 'r').read())['web']['app_secret']
+        open("/var/www/catalog/catalog/fb_client_secrets.json", "r").read())["web"]["app_secret"]
     url = 'https://graph.facebook.com/oauth/access_token?' \
           'grant_type=fb_exchange_token&client_id=%s&' \
           'client_secret=%s&fb_exchange_token=%s' % (
