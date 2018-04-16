@@ -31,6 +31,8 @@ if __name__ == '__main__':
 ```
 ### Setup and Configure Instance
 
+** Amazon AWS Billing Note:** Amazon AWS will charge a fee for instance usage, starting at $5 a month. 
+
 Create an [Amazon AWS Lightsail account](https://portal.aws.amazon.com/).
 
 Create a [Ubuntu Linux-based instance on Lightsail](https://lightsail.aws.amazon.com/ls/docs/getting-started/article/getting-started-with-amazon-lightsail).
