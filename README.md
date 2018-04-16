@@ -13,7 +13,7 @@ Follow these instructions to set up the Linux Server Catalog for the Linux Serve
 * [Amazon AWS Lightsail Ubuntu Linux Instance](https://lightsail.aws.amazon.com/ls/docs/getting-started/article/getting-started-with-amazon-lightsail).
 * [Git](https://git-scm.com/downloads).
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
-* [Vagrant](https://www.vagrantup.com/).
+* [Optional - Vagrant](https://www.vagrantup.com/).
 * [Optional - Ubuntu Linux Virtual Machine](https://github.com/udacity/fullstack-nanodegree-vm).
 * You will need an SSH client, such as [Putty - Windows](https://www.putty.org/)/[Putty - Mac](https://www.ssh.com/ssh/putty/mac/) or otherwise a terminal that can send/recieve ssh connections.
 * [Optional - Github Desktop](https://desktop.github.com/).
