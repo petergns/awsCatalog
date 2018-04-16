@@ -14,7 +14,7 @@ Follow these instructions to set up the Linux Server Catalog for the Linux Serve
 * [Git](https://git-scm.com/downloads).
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads).
 * [Vagrant](https://www.vagrantup.com/).
-* [Ubuntu Linux Virtual Machine](https://github.com/udacity/fullstack-nanodegree-vm).
+* [Optional - Ubuntu Linux Virtual Machine](https://github.com/udacity/fullstack-nanodegree-vm).
 * You will need an SSH client, such as [Putty - Windows](https://www.putty.org/)/[Putty - Mac](https://www.ssh.com/ssh/putty/mac/) or otherwise a terminal that can send/recieve ssh connections.
 * [Optional - Github Desktop](https://desktop.github.com/).
 
@@ -31,7 +31,7 @@ if __name__ == '__main__':
 ```
 ### Setup and Configure Instance
 
-** Amazon AWS Billing Note:** Amazon AWS will charge a fee for instance usage, starting at $5 a month. 
+**Amazon AWS Billing Note:** Amazon AWS will charge a fee for instance usage, starting at $5 a month. 
 
 Create an [Amazon AWS Lightsail account](https://portal.aws.amazon.com/).
 
